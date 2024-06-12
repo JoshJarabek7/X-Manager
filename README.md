@@ -2,7 +2,9 @@
 
 Manage your account on X without having to create a developer account and use their API.
 
-It's done entirely using Selenium and Python to login, load/search/delete tweets/likes/replies/retweets, and is entirely local and free!
+It's done entirely using Selenium and Python to login and load/search/delete your tweets/likes/replies/retweets.
+
+Done entirely local and free!
 
 Requires you to request your profile/data archive from X and then send it to the backend. The data will be parsed and updated to the MongoDB Database in the Docker Compose file. The backend and selenium will then use that database, as well as websockets to the frontend, to update your profile, database, and frontend in real-time.
 
