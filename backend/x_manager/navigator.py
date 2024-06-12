@@ -26,3 +26,9 @@ class Navigator:
         """Navigates to the user's replies section"""
         url = f"{self._base_url}/{self._profile.username}/with_replies"
         self._driver.get(url)
+
+    def link(self, url: str):
+        """Navigates to the url given"""
+        if "twitter" in url:
+            url = url.replace("twitter", "x")
+        self._driver.get(url)
