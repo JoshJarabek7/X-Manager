@@ -13,10 +13,10 @@ from selenium.common.exceptions import (
     ElementNotInteractableException,
     WebDriverException,
 )
-from x_manager.profile import Profile
-from x_manager.driver import DriverManager
+from .profile import Profile
+from .driver import DriverManager
 
-from x_manager.cookies import CookieManager
+from .cookies import CookieManager
 
 LOGGER = logging.Logger("__name__")
 
