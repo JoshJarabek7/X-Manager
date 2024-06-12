@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "x-manager"
+version = "0.1.0"
+description = ""
+authors = ["Josh Jarabek <jarabekjosh@icloud.com>"]
+readme = "README.md"
+
+[tool.pytest.ini_options]
+log_cli = true
+log_cli_level = "DEBUG"
+log_cli_format = "%(asctime)s [%(levelname)8s] %(message)s (%(filename)s:%(lineno)s)"
+log_cli_date_format = "%Y-%m-%d %H:%M:%S"
+
+
+[tool.poetry.dependencies]
+python = "^3.12"
+selenium = "^4.21.0"
+python-dotenv = "^1.0.1"
+beanie = "^1.26.0"
+fastapi = "^0.111.0"
+uvloop = "^0.19.0"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2.2"
+pytest-asyncio = "^0.23.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
