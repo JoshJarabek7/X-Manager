@@ -339,3 +339,4 @@ package
 # End of https://www.toptal.com/developers/gitignore/api/node,svelte,python,visualstudiocode
 
 cookies.json
+.vscode
