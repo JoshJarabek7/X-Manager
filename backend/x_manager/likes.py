@@ -11,6 +11,8 @@ from x_manager.routers.rabbit.manager import RabbitMQManager
 
 
 class RabbitMessage(BaseModel):
+    """Schema for sending and receiving basic RabbitMQ Messages"""
+
     queue: str
     like_id: str
 
@@ -55,8 +57,12 @@ class Likes:
         j = m.model_dump_json()
         await router.broker.publish(message=j, queue=queue_name)
 
-    async def delete(self, url: str):
+    async def _convert_id_to_url(self, like_id: str) -> str:
+        return f"https://x.com/i/web/status/{like_id}"
+
+    async def delete(self, like_id: str):
         """Delete like from X"""
+        url = await self._convert_id_to_url(like_id)
         await (
             self._within_limits()
         )  # Either returns True or sleeps until it can return True

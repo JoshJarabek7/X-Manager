@@ -3,6 +3,7 @@
 import json
 from x_manager.routers.apis.ws import WebSocketManager
 from x_manager.models.Likes import Like
+from x_manager.likes import Likes
 from pydantic import BaseModel
 from beanie import PydanticObjectId
 from .manager import RabbitMQManager
@@ -60,6 +61,7 @@ async def delete_like_ids(m: DeleteLikesSchema):
 async def driver_delete_like_ids(m: DeleteLikesSchema):
     """Receive an array of like_ids to delete from X"""
     likes = m.like_ids
+    likes_manager = Likes()
 
     for like in likes:
-        
+        await likes_manager.delete(like)
