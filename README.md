@@ -20,4 +20,10 @@ Plans for:
     - See who you're a fan of (following accounts that aren't following you)
     - Input your SMS 2FA or Email 2FA if X asks for it
 
+- Advanced whitelisting:
+    - Keywords
+    - AI semantics (including media)
+    - Regex
+    - from/to/date/etc
+
 - Integration of any other ideas as we go along
